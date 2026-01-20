@@ -65,7 +65,7 @@
     <!-- Submit Button -->
     <div class="pt-2">
         <button type="submit"
-                class="w-full bg-green-600 text-white py-2 rounded-md font-semibold hover:bg-blue-700 transition">
+                class="w-full bg-green-600 text-white py-2 rounded-md font-semibold hover:bg-green-700 transition">
             Save Product
         </button>
     </div>
@@ -73,7 +73,7 @@
 
 <div class="bg-white ps-80 px-10 mt-10 pb-40 shadow lg:col-span-2">
     <table class="min-w-full border border-black">
-        <thead class="bg-gray-100">
+        <thead class="bg-gray-200">
             <tr>
                 <th class="px-4 py-3 text-left text-sm font-semibold">No</th>
                 <th class="px-4 py-3 text-left text-sm font-semibold">Product Name</th>
@@ -87,7 +87,7 @@
 
         <tbody class="divide-y">
             @foreach ($products as $product)
-            <tr class="hover:bg-gray-50">
+            <tr>
                 <td class="px-4 py-3">{{ $loop->iteration }}</td>
                 <td class="px-4 py-3">{{ $product->name }}</td>
                 <td class="px-4 py-3">{{ $product->description }}</td>
@@ -97,13 +97,13 @@
                 <td class="px-4 py-3">
                     <div class="flex justify-center gap-2 mt-4">
                         <a href="/product/{{ $product->id }}/edit"
-                           class="px-3 py-1 mb-4 bg-blue-600 text-white rounded">
+                           class="px-3 py-1 mb-4 bg-blue-900 text-white rounded hover:bg-blue-950">
                             Edit
                         </a>
                         <form action="/product/{{ $product->id }}" method="POST">
                             @csrf
                             @method('DELETE')
-                            <button type="submit" class="px-3 py-1 bg-red-600 text-white rounded">
+                            <button type="submit" class="px-3 py-1 bg-red-600 text-white rounded hover:bg-red-700">
                                 Delete
                             </button>
                         </form>
